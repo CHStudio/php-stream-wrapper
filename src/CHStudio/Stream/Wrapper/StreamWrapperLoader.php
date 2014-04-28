@@ -73,7 +73,7 @@ class StreamWrapperLoader
 	 * @return boolean True on success and False on failure
 	 */
 	public function register(WrapperInterface $wrapper, $options = 0) {
-		return stream_wrapper_register($wrapper->getProtocol(), $wrapper, $options);
+		return stream_wrapper_register($wrapper->getProtocol(), get_class($wrapper), $options);
 	}
 
 	/**

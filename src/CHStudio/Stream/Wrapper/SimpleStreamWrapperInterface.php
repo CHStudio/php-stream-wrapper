@@ -41,7 +41,7 @@ interface SimpleStreamWrapperInterface extends WrapperInterface
 	 * @param string $opened_path
 	 * @return boolean
 	 */
-	public function stream_open ( $path, $mode, $options, &$opened_path );
+	public function stream_open( $path, $mode, $options, &$opened_path );
 
 	/**
 	 * Read from stream
@@ -73,5 +73,5 @@ interface SimpleStreamWrapperInterface extends WrapperInterface
 	 * @param string $data
 	 * @return int
 	 */
-	public function stream_write ( $data );
+	public function stream_write( $data );
 }

@@ -18,12 +18,6 @@ namespace CHStudio\Stream\Wrapper;
 interface WrapperInterface
 {
 	/**
-	 * Current resource
-	 * @var resource
-	 */
-	public $context;
-
-	/**
 	 * Allow the wrapper to define the protocol on which it is attached
 	 * @return string
 	 */
