@@ -49,7 +49,7 @@ abstract class BaseFileWrapper extends AbstractStreamWrapper implements SimpleSt
 	 * @inheritedDoc
 	 */
 	public function stream_open( $path, $mode, $options, &$opened_path ) {
-		$this->resource = fopen($this->parsePath($path), $mode, $options);
+		$this->resource = fopen($this->parsePath($path), $mode, false, $options);
 	}
 
 	/**
