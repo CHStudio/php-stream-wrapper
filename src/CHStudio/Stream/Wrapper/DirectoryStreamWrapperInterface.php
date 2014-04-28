@@ -19,11 +19,15 @@ namespace CHStudio\Stream\Wrapper;
 interface DirectoryStreamWrapperInterface extends WrapperInterface
 {
 	/**
+	 * Close directory handle
+	 * @link http://www.php.net/manual/en/streamwrapper.dir-closedir.php
 	 * @return boolean
  	 */
 	public function dir_closedir();
 
 	/**
+	 * Open directory handle
+	 * @link http://www.php.net/manual/en/streamwrapper.dir-opendir.php
 	 * @param string $path
 	 * @param int $options
 	 * @return boolean
@@ -31,11 +35,15 @@ interface DirectoryStreamWrapperInterface extends WrapperInterface
 	public function dir_opendir($path, $options);
 
 	/**
+	 * Read entry from directory handle
+	 * @link http://www.php.net/manual/en/streamwrapper.dir-readdir.php
 	 * @return string
 	 */
 	public function dir_readdir();
 
 	/**
+	 * Rewind directory handle
+	 * @link http://www.php.net/manual/en/streamwrapper.dir-rewinddir.php
 	 * @return boolean
 	 */
 	public function dir_rewinddir();

@@ -19,7 +19,8 @@ namespace CHStudio\Stream\Wrapper;
 interface UnlinkWrapperInterface extends WrapperInterface
 {
 	/**
-	 * Destroy the given path
+	 * Delete a file
+	 * @link http://www.php.net/manual/en/streamwrapper.unlink.php
 	 * @param string $path
 	 * @return boolean
 	 */
