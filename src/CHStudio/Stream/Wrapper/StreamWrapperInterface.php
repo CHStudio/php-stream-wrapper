@@ -36,7 +36,7 @@ interface StreamWrapperInterface extends SimpleStreamWrapperInterface
 	/**
 	 * Advisory file locking
 	 * @link http://www.php.net/manual/en/streamwrapper.stream-lock.php
-	 * @param int $operations
+	 * @param int $operation
 	 * @return boolean
 	 */
 	public function stream_lock( $operation );

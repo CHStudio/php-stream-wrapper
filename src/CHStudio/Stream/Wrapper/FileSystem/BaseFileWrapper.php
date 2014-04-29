@@ -29,11 +29,6 @@ abstract class BaseFileWrapper extends AbstractStreamWrapper implements SimpleSt
 	/**
 	 * @inheritedDoc
 	 */
-	abstract public function getProtocol();
-
-	/**
-	 * @inheritedDoc
-	 */
 	public function stream_close() {
 		fclose($this->resource);
 	}
@@ -49,7 +44,22 @@ abstract class BaseFileWrapper extends AbstractStreamWrapper implements SimpleSt
 	 * @inheritedDoc
 	 */
 	public function stream_open( $path, $mode, $options, &$opened_path ) {
-		$this->resource = fopen($this->parsePath($path), $mode, false, $options);
+		$path = realpath($this->parsePath($path));
+		$this->resource = fopen($path, $mode);
+
+		if( $this->resource === false ) {
+			if( $options & STREAM_REPORT_ERRORS ) {
+				trigger_error("Resource can't be loaded!");
+			}
+
+			return false;
+		}
+
+		if( $options & STREAM_USE_PATH ) {
+			$opened_path = $path;
+		}
+
+		return $this->resource;
 	}
 
 	/**
